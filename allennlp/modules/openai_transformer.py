@@ -317,7 +317,8 @@ class OpenaiTransformer(torch.nn.Module, FromParams):
         e = self.embed(x)
 
         # h is (batch_size, sequence_length, embedding_dim)
-        h = e.sum(dim=2)
+        # h = e.sum(dim=2)
+        h = e
 
         all_layers = [h]
         for block in self.h:
